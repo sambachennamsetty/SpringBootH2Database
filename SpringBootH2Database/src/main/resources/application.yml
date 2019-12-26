@@ -1,0 +1,33 @@
+server:
+  port: 9977
+
+#These properties no required. If you want to put username and password then these required.
+spring:
+  datasource:
+    url: jdbc:h2:file:~/test
+    driver-class-name: org.h2.Driver 
+    username: samba
+    password: samba
+
+#This is only required property to enabling H2 database.
+  h2:
+    console:
+      enabled: true
+      
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: false
+    properties:
+      hibernate:
+       format_sql: true
+       generate_statistics: true
+
+logging:
+  level:
+    org:
+     hibernate:
+      type: trace
+      stat: debug
+       
